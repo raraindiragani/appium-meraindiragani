@@ -1,1 +1,5 @@
 com\juaracoding\mera\App.class
+com\juaracoding\mera\pages\CheckoutPage.class
+com\juaracoding\mera\pages\LoginPage.class
+com\juaracoding\mera\pages\ProductPage.class
+com\juaracoding\mera\pages\CartPage.class

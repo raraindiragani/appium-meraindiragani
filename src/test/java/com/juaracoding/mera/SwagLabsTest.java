@@ -1,20 +1,17 @@
 package com.juaracoding.mera;
 
-import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.time.Duration;
 
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
-import io.appium.java_client.AppiumBy;
+import com.juaracoding.mera.pages.*;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 
@@ -23,145 +20,77 @@ public class SwagLabsTest {
     private AndroidDriver driver;
     private WebDriverWait wait;
 
+    LoginPage loginPage;
+    ProductPage productPage;
+    CartPage cartPage;
+    CheckoutPage checkoutPage;
+
     @BeforeClass
-    public void setUp() {
-        System.out.println("Setting up Swag Labs App...");
+    public void setUp() throws Exception {
 
         UiAutomator2Options options = new UiAutomator2Options();
         options.setDeviceName("Pixel 3");
         options.setUdid("emulator-5554");
         options.setPlatformName("Android");
-
         options.setAppPackage("com.swaglabsmobileapp");
         options.setAppActivity("com.swaglabsmobileapp.MainActivity");
         options.setNoReset(true);
 
-        try {
-            driver = new AndroidDriver(new URI("http://127.0.0.1:4723/wd/hub").toURL(), options);
-        } catch (MalformedURLException | URISyntaxException e) {
-            throw new IllegalStateException("Appium server error", e);
-        }
-
+        driver = new AndroidDriver(new URI("http://127.0.0.1:4723/wd/hub").toURL(), options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        loginPage = new LoginPage(driver, wait);
+        productPage = new ProductPage(driver, wait);
+        cartPage = new CartPage(driver, wait);
+        checkoutPage = new CheckoutPage(driver, wait);
     }
 
     @AfterClass
     public void tearDown() {
-        System.out.println("Closing App...");
-        if (driver != null) {
-            driver.quit();
-        }
+        if (driver != null) driver.quit();
     }
 
-    // helper login
-    public void login(String username, String password) {
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(
-                AppiumBy.accessibilityId("test-Username"))).sendKeys(username);
-
-        driver.findElement(AppiumBy.accessibilityId("test-Password")).sendKeys(password);
-
-        driver.findElement(AppiumBy.accessibilityId("test-LOGIN")).click();
+    @AfterMethod
+    public void doLogout() {
+    try {
+        productPage.logout();
+    } catch (Exception e) {
+        System.out.println("Logout skipped (maybe not logged in)");
     }
+}
 
-    // Login success
-    @Test(description = "Login Success", priority = 1)
+    @Test (description = "Test valid login", priority = 1)
     public void testLoginSuccess() {
-        System.out.println("Login Success Test");
-
-        login("standard_user", "secret_sauce");
-
-        boolean isProductPage = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(
-                        By.xpath("//*[@text='PRODUCTS']")
-                )
-        ).isDisplayed();
-
-        Assert.assertTrue(isProductPage, "Login gagal");
-
-        // Logout
-        driver.findElement(AppiumBy.accessibilityId("test-Menu")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(
-                AppiumBy.accessibilityId("test-LOGOUT"))).click();
+        loginPage.login("standard_user", "secret_sauce");
+        Assert.assertTrue(productPage.isOnProductPage());
     }
 
-    // Login failed
-    @Test(description = "Login Failed", priority = 2)
+    @Test (description = "Test invalid login", priority = 2)
     public void testLoginFailed() {
-        System.out.println("Login Negative Test");
-
-        login("wrong_user", "wrong_pass");
-
-        boolean isErrorDisplayed = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(
-                        By.xpath("//*[contains(@text,'Username and password')]")
-                )
-        ).isDisplayed();
-
-        Assert.assertTrue(isErrorDisplayed, "Error tidak muncul");
+        loginPage.login("wrong_user", "wrong_pass");
+        Assert.assertTrue(loginPage.isErrorDisplayed());
     }
 
-    // Sort + Cart
-    @Test(description = "Sort Product & Add to Cart", priority = 3)
+    @Test (description = "Test sorting products and adding to cart", priority = 4)
     public void testSortAndAddToCart() {
-        System.out.println("Sort & Add To Cart");
+        loginPage.login("standard_user", "secret_sauce");
+        productPage.sortLowToHigh();
+        productPage.addProduct();
+        productPage.goToCart();
 
-        login("standard_user", "secret_sauce");
-
-        wait.until(ExpectedConditions.elementToBeClickable(
-                AppiumBy.accessibilityId("test-Modal Selector Button"))).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//*[@text='Price (low to high)']"))).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("(//*[@content-desc='test-ADD TO CART'])[1]"))).click();
-
-        driver.findElement(AppiumBy.accessibilityId("test-Cart")).click();
-
-        boolean isCartPage = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(
-                        By.xpath("//*[@text='YOUR CART']")
-                )
-        ).isDisplayed();
-
-        Assert.assertTrue(isCartPage, "Gagal masuk cart");
+        Assert.assertTrue(cartPage.isCartDisplayed());
     }
 
-    // Checkout
-    @Test(description = "Checkout Flow", priority = 4)
+    @Test (description = "Test checkout flow", priority = 3)
     public void testCheckoutFlow() {
-        System.out.println("Checkout Test");
+        loginPage.login("standard_user", "secret_sauce");
+        productPage.addProduct();
+        productPage.goToCart();
 
-        login("standard_user", "secret_sauce");
+        cartPage.clickCheckout();
+        checkoutPage.fillData();
+        checkoutPage.finishCheckout();
 
-        wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("(//*[@content-desc='test-ADD TO CART'])[1]"))).click();
-
-        driver.findElement(AppiumBy.accessibilityId("test-Cart")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(
-                AppiumBy.accessibilityId("test-CHECKOUT"))).click();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(
-                AppiumBy.accessibilityId("test-First Name"))).sendKeys("Mera");
-
-        driver.findElement(AppiumBy.accessibilityId("test-Last Name")).sendKeys("QA");
-        driver.findElement(AppiumBy.accessibilityId("test-Zip/Postal Code")).sendKeys("12345");
-
-        driver.findElement(AppiumBy.accessibilityId("test-CONTINUE")).click();
-
-        driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\"test-FINISH\"))"));
-
-        wait.until(ExpectedConditions.elementToBeClickable(
-                AppiumBy.accessibilityId("test-FINISH"))).click();
-
-        boolean isSuccess = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(
-                        By.xpath("//*[contains(@text,'THANK YOU')]")
-                )
-        ).isDisplayed();
-
-        Assert.assertTrue(isSuccess, "Checkout gagal");
+        Assert.assertTrue(checkoutPage.isCheckoutSuccess());
     }
 }

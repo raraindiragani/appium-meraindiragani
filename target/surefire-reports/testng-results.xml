@@ -1,265 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="0" failed="4" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-06T15:59:29 WITA" name="Surefire suite" finished-at="2026-04-06T16:00:33 WITA" duration-ms="64291">
+  <suite started-at="2026-04-06T21:11:09 WITA" name="Surefire suite" finished-at="2026-04-06T21:12:08 WITA" duration-ms="58840">
     <groups>
     </groups>
-    <test started-at="2026-04-06T15:59:29 WITA" name="Surefire test" finished-at="2026-04-06T16:00:33 WITA" duration-ms="64291">
+    <test started-at="2026-04-06T21:11:09 WITA" name="Surefire test" finished-at="2026-04-06T21:12:08 WITA" duration-ms="58840">
       <class name="com.juaracoding.mera.SwagLabsTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T15:59:29 WITA" name="setUp" finished-at="2026-04-06T15:59:38 WITA" duration-ms="9349" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T21:11:09 WITA" name="setUp" finished-at="2026-04-06T21:11:20 WITA" duration-ms="10987" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testLoginSuccess()[pri:1, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T15:59:38 WITA" name="testLoginSuccess" description="Login Success" finished-at="2026-04-06T15:59:53 WITA" duration-ms="14636" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element found by AppiumBy.accessibilityId: test-Username, but... org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters..
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: '4.41.0', revision: '9fc754f'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appium:appActivity: com.swaglabsmobileapp.MainA..., appium:appPackage: com.swaglabsmobileapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.swaglabsmobileapp.MainA..., appPackage: com.swaglabsmobileapp, automationName: UIAutomator2, deviceName: Pixel 3, noReset: true, platformName: ANDROID, udid: emulator-5554}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Google, appium:deviceModel: Android SDK built for x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2160, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1962, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 38d830ae-604b-439d-9c0b-88a2d28bfae5]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by AppiumBy.accessibilityId: test-Username, but... org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters..
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: '4.41.0', revision: '9fc754f'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appium:appActivity: com.swaglabsmobileapp.MainA..., appium:appPackage: com.swaglabsmobileapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.swaglabsmobileapp.MainA..., appPackage: com.swaglabsmobileapp, automationName: UIAutomator2, deviceName: Pixel 3, noReset: true, platformName: ANDROID, udid: emulator-5554}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Google, appium:deviceModel: Android SDK built for x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2160, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1962, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 38d830ae-604b-439d-9c0b-88a2d28bfae5
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:233)
-at com.juaracoding.mera.SwagLabsTest.login(SwagLabsTest.java:92)
-at com.juaracoding.mera.SwagLabsTest.testLoginSuccess(SwagLabsTest.java:105)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:744)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:135)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:112)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:146)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="testLoginSuccess()[pri:1, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T21:11:20 WITA" name="testLoginSuccess" description="Test valid login" finished-at="2026-04-06T21:11:25 WITA" duration-ms="4738" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginSuccess -->
-        <test-method signature="testLoginFailed()[pri:2, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T15:59:53 WITA" name="testLoginFailed" description="Login Failed" finished-at="2026-04-06T16:00:06 WITA" duration-ms="13366" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element found by AppiumBy.accessibilityId: test-Username, but... org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters..
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: '4.41.0', revision: '9fc754f'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appium:appActivity: com.swaglabsmobileapp.MainA..., appium:appPackage: com.swaglabsmobileapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.swaglabsmobileapp.MainA..., appPackage: com.swaglabsmobileapp, automationName: UIAutomator2, deviceName: Pixel 3, noReset: true, platformName: ANDROID, udid: emulator-5554}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Google, appium:deviceModel: Android SDK built for x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2160, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1962, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 38d830ae-604b-439d-9c0b-88a2d28bfae5]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by AppiumBy.accessibilityId: test-Username, but... org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters..
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: '4.41.0', revision: '9fc754f'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appium:appActivity: com.swaglabsmobileapp.MainA..., appium:appPackage: com.swaglabsmobileapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.swaglabsmobileapp.MainA..., appPackage: com.swaglabsmobileapp, automationName: UIAutomator2, deviceName: Pixel 3, noReset: true, platformName: ANDROID, udid: emulator-5554}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Google, appium:deviceModel: Android SDK built for x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2160, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1962, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 38d830ae-604b-439d-9c0b-88a2d28bfae5
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:233)
-at com.juaracoding.mera.SwagLabsTest.login(SwagLabsTest.java:92)
-at com.juaracoding.mera.SwagLabsTest.testLoginFailed(SwagLabsTest.java:126)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:744)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:135)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:112)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:146)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method is-config="true" signature="doLogout()[pri:0, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T21:11:25 WITA" name="doLogout" finished-at="2026-04-06T21:11:27 WITA" duration-ms="1855" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doLogout -->
+        <test-method signature="testLoginFailed()[pri:2, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T21:11:27 WITA" name="testLoginFailed" description="Test invalid login" finished-at="2026-04-06T21:11:31 WITA" duration-ms="4433" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginFailed -->
-        <test-method signature="testSortAndAddToCart()[pri:3, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T16:00:06 WITA" name="testSortAndAddToCart" description="Sort Product &amp; Add to Cart" finished-at="2026-04-06T16:00:20 WITA" duration-ms="13316" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element found by AppiumBy.accessibilityId: test-Username, but... org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters..
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: '4.41.0', revision: '9fc754f'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appium:appActivity: com.swaglabsmobileapp.MainA..., appium:appPackage: com.swaglabsmobileapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.swaglabsmobileapp.MainA..., appPackage: com.swaglabsmobileapp, automationName: UIAutomator2, deviceName: Pixel 3, noReset: true, platformName: ANDROID, udid: emulator-5554}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Google, appium:deviceModel: Android SDK built for x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2160, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1962, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 38d830ae-604b-439d-9c0b-88a2d28bfae5]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by AppiumBy.accessibilityId: test-Username, but... org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters..
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: '4.41.0', revision: '9fc754f'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appium:appActivity: com.swaglabsmobileapp.MainA..., appium:appPackage: com.swaglabsmobileapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.swaglabsmobileapp.MainA..., appPackage: com.swaglabsmobileapp, automationName: UIAutomator2, deviceName: Pixel 3, noReset: true, platformName: ANDROID, udid: emulator-5554}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Google, appium:deviceModel: Android SDK built for x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2160, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1962, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 38d830ae-604b-439d-9c0b-88a2d28bfae5
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:233)
-at com.juaracoding.mera.SwagLabsTest.login(SwagLabsTest.java:92)
-at com.juaracoding.mera.SwagLabsTest.testSortAndAddToCart(SwagLabsTest.java:142)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:744)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:135)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:112)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:146)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method is-config="true" signature="doLogout()[pri:0, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T21:11:31 WITA" name="doLogout" finished-at="2026-04-06T21:11:41 WITA" duration-ms="10208" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSortAndAddToCart -->
-        <test-method signature="testCheckoutFlow()[pri:4, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T16:00:20 WITA" name="testCheckoutFlow" description="Checkout Flow" finished-at="2026-04-06T16:00:33 WITA" duration-ms="13248" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element found by AppiumBy.accessibilityId: test-Username, but... org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters..
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: '4.41.0', revision: '9fc754f'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appium:appActivity: com.swaglabsmobileapp.MainA..., appium:appPackage: com.swaglabsmobileapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.swaglabsmobileapp.MainA..., appPackage: com.swaglabsmobileapp, automationName: UIAutomator2, deviceName: Pixel 3, noReset: true, platformName: ANDROID, udid: emulator-5554}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Google, appium:deviceModel: Android SDK built for x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2160, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1962, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 38d830ae-604b-439d-9c0b-88a2d28bfae5]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by AppiumBy.accessibilityId: test-Username, but... org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters..
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: '4.41.0', revision: '9fc754f'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appium:appActivity: com.swaglabsmobileapp.MainA..., appium:appPackage: com.swaglabsmobileapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.swaglabsmobileapp.MainA..., appPackage: com.swaglabsmobileapp, automationName: UIAutomator2, deviceName: Pixel 3, noReset: true, platformName: ANDROID, udid: emulator-5554}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Google, appium:deviceModel: Android SDK built for x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2160, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1962, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 38d830ae-604b-439d-9c0b-88a2d28bfae5
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:233)
-at com.juaracoding.mera.SwagLabsTest.login(SwagLabsTest.java:92)
-at com.juaracoding.mera.SwagLabsTest.testCheckoutFlow(SwagLabsTest.java:169)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:744)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:135)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:112)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:146)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        </test-method> <!-- doLogout -->
+        <test-method signature="testCheckoutFlow()[pri:3, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T21:11:41 WITA" name="testCheckoutFlow" description="Test checkout flow" finished-at="2026-04-06T21:11:55 WITA" duration-ms="13724" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCheckoutFlow -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T16:00:33 WITA" name="tearDown" finished-at="2026-04-06T16:00:33 WITA" duration-ms="280" status="PASS">
+        <test-method is-config="true" signature="doLogout()[pri:0, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T21:11:55 WITA" name="doLogout" finished-at="2026-04-06T21:11:57 WITA" duration-ms="1775" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doLogout -->
+        <test-method signature="testSortAndAddToCart()[pri:4, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T21:11:57 WITA" name="testSortAndAddToCart" description="Test sorting products and adding to cart" finished-at="2026-04-06T21:12:05 WITA" duration-ms="8369" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSortAndAddToCart -->
+        <test-method is-config="true" signature="doLogout()[pri:0, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T21:12:05 WITA" name="doLogout" finished-at="2026-04-06T21:12:07 WITA" duration-ms="1813" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doLogout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.juaracoding.mera.SwagLabsTest@2133814f]" started-at="2026-04-06T21:12:07 WITA" name="tearDown" finished-at="2026-04-06T21:12:08 WITA" duration-ms="792" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
